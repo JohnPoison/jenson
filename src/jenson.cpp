@@ -71,6 +71,7 @@ static QJsonValue serialize(const QVariant var, bool *ok)
         *ok = false;
         break;
 
+    case QMetaType::QObjectStar:
     case QVariant::UserType:
         nestedObj = qvariant_cast<QObject*>(var);
         if (nestedObj)
